@@ -130,7 +130,6 @@
                 $(self).children().each(function() {
                     if ($(this).val() === selectedKey + "") {
                         $(this).prop("selected", true);
-                        $(this).attr("selected", "selected");
                     }
                 });
 

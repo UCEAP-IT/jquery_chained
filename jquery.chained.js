@@ -33,7 +33,6 @@
                 /* unless something is already selected */
                 if (!$("option:selected", this).length) {
                     $("option", this).first().prop("selected", true);
-                    $("option", this).first().attr("selected", "selected");
                 }
 
                 /* Force updating the children. */
