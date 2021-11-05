@@ -9,7 +9,7 @@
  * Project home:
  *   http://www.appelsiini.net/projects/chained
  *
- * Version: 2.0.0-beta.3
+ * Version: 2.0.0-beta.4
  *
  */
 
@@ -129,6 +129,7 @@
                 /* Loop option again to set selected. IE needed this... */
                 $(self).children().each(function() {
                     if ($(this).val() === selectedKey + "") {
+                        $(this).prop("selected", true);
                         $(this).attr("selected", "selected");
                     }
                 });

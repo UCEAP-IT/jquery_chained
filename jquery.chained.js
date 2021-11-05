@@ -9,7 +9,7 @@
  * Project home:
  *   http://www.appelsiini.net/projects/chained
  *
- * Version: 2.0.0-beta.3
+ * Version: 2.0.0-beta.4
  *
  */
 
@@ -32,6 +32,7 @@
                 /* Force IE to see something selected on first page load, */
                 /* unless something is already selected */
                 if (!$("option:selected", this).length) {
+                    $("option", this).first().prop("selected", true);
                     $("option", this).first().attr("selected", "selected");
                 }
 
