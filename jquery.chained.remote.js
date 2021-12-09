@@ -9,7 +9,7 @@
  * Project home:
  *   http://www.appelsiini.net/projects/chained
  *
- * Version: 2.0.0-beta.4
+ * Version: 2.0.0-beta.7
  *
  */
 
@@ -29,6 +29,8 @@
 
             /* Save this to self because this changes when scope changes. */
             var self = this;
+            /* Grab current disabled state before changing it. */
+            var defaultSelfDisableState = $(self).prop("disabled");
             var request = false; /* Track xhr requests. */
 
             $(settings.parents).each(function() {
@@ -137,7 +139,7 @@
                 if (1 === $("option", self).length && $(self).val() === "") {
                     $(self).prop("disabled", true);
                 } else {
-                    $(self).prop("disabled", false);
+                    $(self).prop("disabled", defaultSelfDisableState);
                 }
             }
         });

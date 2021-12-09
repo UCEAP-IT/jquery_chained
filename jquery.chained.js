@@ -9,7 +9,7 @@
  * Project home:
  *   http://www.appelsiini.net/projects/chained
  *
- * Version: 2.0.0-beta.4
+ * Version: 2.0.0-beta.7
  *
  */
 
@@ -22,6 +22,8 @@
             /* Save this to child because this changes when scope changes. */
             var child   = this;
             var backup = $(child).clone();
+            /* Grab current disabled state before changing it. */
+            var defaultChildDisableState = $(child).prop("disabled");
 
             /* Handles maximum two parents now. */
             $(parentSelector).each(function() {
@@ -92,7 +94,7 @@
                 if (1 === $("option", child).length && $(child).val() === "") {
                     $(child).prop("disabled", true);
                 } else {
-                    $(child).prop("disabled", false);
+                    $(child).prop("disabled", defaultChildDisableState);
                 }
                 if (triggerChange) {
                     $(child).trigger("change");
